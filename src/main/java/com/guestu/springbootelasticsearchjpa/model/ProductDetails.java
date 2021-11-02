@@ -1,0 +1,20 @@
+package com.guestu.springbootelasticsearchjpa.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+
+
+@Document(indexName = "ecom",shards = 2,type= "product")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductDetails {
+    @Id
+    private Long id;
+    private String label;
+    private String value;
+}
